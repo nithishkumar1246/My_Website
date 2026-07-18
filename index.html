@@ -1,0 +1,1764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio of Nithish Kumar - Artificial Intelligence & Machine Learning Student. Showcase of models, data science projects, and research.">
+  <meta name="keywords"
+    content="Portfolio, AI Student, Machine Learning Engineer, Deep Learning, Data Science, Python, PyTorch,Internet Of Things, NLP, Product Development">
+  <meta name="author" content="Nithish Kumar">
+  <meta property="og:title" content="Nithish Kumar | AI & Machine Learning Student">
+  <meta property="og:description"
+    content="Explore my research, machine learning models, and data science projects in computer vision and natural language processing.">
+  <meta property="og:type" content="website">
+
+  <title>Nithish Kumar | AI & Machine Learning Student</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="dark-theme">
+  <!-- Interactive Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor"></div>
+  <div class="custom-cursor-follower"></div>
+
+  <!-- Header / Navigation -->
+  <header id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">Nithish.M</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Education</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle dark/light theme" class="icon-btn">
+          <i data-lucide="sun" class="sun-icon"></i>
+          <i data-lucide="moon" class="moon-icon"></i>
+        </button>
+        <button id="mobile-menu-btn" aria-label="Open navigation menu" class="icon-btn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <div class="drawer-header">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>Nithish.M<span class="logo-bracket">/&gt;</span>
+      </a>
+      <button id="mobile-menu-close" aria-label="Close navigation menu" class="icon-btn">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <div class="drawer-links">
+      <a href="#home" class="drawer-link">Home</a>
+      <a href="#about" class="drawer-link">About</a>
+      <a href="#skills" class="drawer-link">Skills</a>
+      <a href="#projects" class="drawer-link">Projects</a>
+      <a href="#experience" class="drawer-link">Education</a>
+      <a href="#certifications" class="drawer-link">Certifications</a>
+      <a href="#contact" class="drawer-link">Contact</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-container container">
+        <div class="hero-content">
+          <div class="badge fade-in">
+            <span class="pulse-dot"></span> Available for Opportunities
+          </div>
+          <h1 class="hero-title fade-in-delay-1">
+            Hi, I'm <span class="gradient-text">Nithish Kumar</span>
+            <span class="wave">👋</span>
+          </h1>
+
+          <h2 class="hero-subtitle fade-in-delay-2">
+            AI & Machine Learning Engineer | Java Developer | IoT Enthusiast
+          </h2>
+
+          <p class="hero-desc fade-in-delay-3">
+            Artificial Intelligence & Machine Learning Engineer passionate about
+            IoT, Automation, Robotics, and AI-powered product development.
+            I enjoy creating innovative solutions that bridge software and hardware technologies.
+          </p>
+          <div class="hero-actions fade-in-delay-4">
+            <button class="btn btn-primary open-modal-btn" data-modal="cv-modal" id="open-cv-btn">
+              View CV <i data-lucide="file-text"></i>
+            </button>
+            <button class="btn btn-secondary open-modal-btn" data-modal="hire-modal" id="open-hire-btn">
+              Hire Me <i data-lucide="briefcase"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-in-delay-3">
+          <div class="visual-blob-container" data-active-mode="ai">
+            <div class="visual-blob"></div>
+            <div class="avatar-hud-ring"></div>
+            <div class="visual-card floating-card-1">
+              <i data-lucide="cpu" class="card-icon cyan"></i>
+              <div>
+                <h4>AI & Machine Learning</h4>
+                <p>Python, AI, Chatbots</p>
+              </div>
+            </div>
+            <div class="visual-card floating-card-2">
+              <i data-lucide="server" class="card-icon violet"></i>
+              <div>
+                <h4>IoT & Automation</h4>
+                <p>Arduino, Raspberry Pi, Sensors, IoT</p>
+              </div>
+            </div>
+            <img src="assets/Nithish.jpg" alt="Nithish Kumar Portrait" class="hero-avatar">
+            <div class="avatar-scanner"></div>
+            <div class="avatar-radar"></div>
+          </div>
+          <!-- Interactive Mode Switcher -->
+          <div class="hero-mode-switcher-wrapper">
+            <div class="hero-mode-switcher">
+              <button class="mode-switch-btn active" data-mode="ai" aria-label="Switch to AI & Machine Learning Mode">
+                <i data-lucide="brain"></i>
+                <span>AI Mode</span>
+              </button>
+              <button class="mode-switch-btn" data-mode="iot" aria-label="Switch to IoT & Automation Mode">
+                <i data-lucide="cpu"></i>
+                <span>IoT Mode</span>
+              </button>
+              <div class="mode-slider"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-down-indicator">
+        <span class="mouse-icon">
+          <span class="mouse-wheel"></span>
+        </span>
+        <span class="scroll-text">Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">About Me</span>
+          <h3 class="section-title">My Journey</h3>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-text">
+
+            <p class="lead-text">
+              I am an Artificial Intelligence & Machine Learning student passionate about building innovative solutions
+              using AI, IoT, and automation technologies.
+            </p>
+
+            <p>
+              My interests include Artificial Intelligence, Internet of Things (IoT), Robotics, Home Automation, and
+              Product Development. I enjoy developing smart systems that solve real-world problems through technology
+              and innovation.
+            </p>
+
+            <p>
+              I have worked on projects such as Smart Incubation Systems, AI-powered Chatbots, Smart Agriculture
+              Solutions, and IoT-based Automation Systems. My goal is to create impactful products that combine software
+              intelligence with connected devices.
+            </p>
+
+            <div class="about-stats">
+
+              <div class="stat-item">
+                <span class="stat-number">82%</span>
+                <span class="stat-label">Academic score</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Projects Completed</span>
+              </div>
+
+              <div class="stat-item">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Certifications & Workshops</span>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="about-details">
+            <div class="detail-card">
+              <h4 class="detail-title"><i data-lucide="graduation-cap"></i> Education Overview</h4>
+              <ul class="detail-list">
+                <li>
+                  <strong>B.E. Computer Science Engineering (AI & ML)</strong>
+                  <p>Sethu Institute of Technology (2023 - 2027)</p>
+                  <p style="font-size: 12px; margin-top: 4px; color: var(--text-muted);">Current Aggregate: 82% </p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="detail-card">
+              <h4 class="detail-title">
+                <i data-lucide="heart"></i> Research Interests
+              </h4>
+
+              <ul class="detail-list-simple">
+                <li>
+                  <i data-lucide="check" class="check-icon"></i>
+                  Artificial Intelligence & Machine Learning
+                </li>
+
+                <li>
+                  <i data-lucide="check" class="check-icon"></i>
+                  Internet of Things (IoT)
+                </li>
+
+                <li>
+                  <i data-lucide="check" class="check-icon"></i>
+                  Smart Agriculture & Automation Systems
+                </li>
+
+                <li>
+                  <i data-lucide="check" class="check-icon"></i>
+                  AI Chatbots & Generative AI Applications
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Expertise</span>
+          <h3 class="section-title">My Tech Stack</h3>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Machine Learning & Deep Learning -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <i data-lucide="cpu" class="violet"></i>
+              <h4>Machine Learning & AI</h4>
+            </div>
+
+            <div class="skill-items">
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Python for AI & Data Analysis</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Machine Learning Fundamentals</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Deep Learning Fundamentals</span>
+                  <span>70%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 70%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Generative AI & Chatbot Development</span>
+                  <span>75%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Programming & Foundations -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <i data-lucide="code-2" class="cyan"></i>
+              <h4>Languages & Foundations</h4>
+            </div>
+
+            <div class="skill-items">
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Python</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Java (OOPs, Collections, Exception Handling)</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>SQL & Database Design</span>
+                  <span>75%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 75%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>IOT & Sensor Integration</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 70%"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!-- Tools & Technologies -->
+          <div class="skill-category-card">
+            <div class="skill-category-header">
+              <i data-lucide="server" class="emerald"></i>
+              <h4>Tools & Technologies</h4>
+            </div>
+
+            <div class="skill-items">
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Git & GitHub</span>
+                  <span>80%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 80%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>VS Code / Figma / Tinkercad</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>Jupyter Notebook / Google Colab</span>
+                  <span>85%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 85%"></div>
+                </div>
+              </div>
+
+              <div class="skill-item">
+                <div class="skill-info">
+                  <span>ESP32 & IoT Development</span>
+                  <span>90%</span>
+                </div>
+                <div class="skill-progress-bar">
+                  <div class="skill-progress" style="width: 90%"></div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Portfolio</span>
+          <h3 class="section-title">Featured Work</h3>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="cv">Computer Vision</button>
+          <button class="filter-btn" data-filter="IoT">IoT</button>
+          <button class="filter-btn" data-filter="AI">AI</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project India in 2047 -->
+          <div class="project-card" data-category="AI">
+            <div class="project-image-wrapper">
+              <img src="assets/india_2047_thumbnail.png" alt="India in 2047 Project" class="project-img">
+              <div class="project-overlay">
+                <button class="project-btn open-modal-btn" data-modal="modal-india-2047">
+                  Watch Concept Video <i data-lucide="play-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tags">AI • IoT • Smart City • Concept Video</span>
+              <h4 class="project-card-title">
+                India in 2047: Smart Nation Vision
+              </h4>
+              <p class="project-desc-short">A visionary conceptual project and video depicting India's futuristic
+                development in 2047, driven by sustainable AI, IoT cities, and smart automation.</p>
+              <div class="project-links">
+                <a href="https://youtu.be/FsZcJc7HTx8?si=i3Sqh15CKS946S7g" class="project-link open-modal-btn"
+                  data-modal="modal-india-2047">
+                  <i data-lucide="video"></i> Watch Video
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 1 -->
+          <div class="project-card" data-category="cv">
+            <div class="project-image-wrapper">
+              <img src="assets/project1.png" alt="NeuroScan Medical Image Analyzer" class="project-img">
+              <div class="project-overlay">
+                <button class="project-btn open-modal-btn" data-modal="modal-1">
+                  View Case Study <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tags">PyTorch • U-Net • ResNet34</span>
+              <h4 class="project-card-title">
+                NeuroScan MRI Analyzer <span class="status-badge coming-soon">Coming Soon</span>
+              </h4>
+              <p class="project-desc-short">A deep learning model for pixel-level segmentation and classification of
+                brain MRI scans, trained on 5k high-res slices.</p>
+              <div class="project-links">
+                <span class="project-link disabled">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="project-link-icon">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg> GitHub Code
+                </span>
+                <span class="project-link disabled">
+                  <i data-lucide="external-link"></i> Model Weights
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-category="IoT">
+            <div class="project-image-wrapper">
+              <img src="assets/Smart Lock System.png" alt="Smart Lock System" class="project-img">
+
+              <div class="project-overlay">
+                <button class="project-btn open-modal-btn" data-modal="modal-2">
+                  View Details <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-info">
+
+              <span class="project-tags">
+                Arduino • PIR Sensor • Security • IoT
+              </span>
+
+              <h4 class="project-card-title">
+                Smart Lock Security System
+              </h4>
+
+              <p class="project-desc-short">
+                An IoT-based smart security system that combines motion detection
+                and password authentication to provide secure access control and
+                enhanced home security.
+              </p>
+
+              <div class="project-links">
+
+                <a href="https://github.com/nithishkumar1246/CodeAlpha_Smart_Lock_System" class="project-link"
+                  target="_blank" rel="noopener">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="project-link-icon">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                  GitHub Code
+                </a>
+
+                <a href="https://youtu.be/f31p_1uNju0" class="project-link" target="_blank" rel="noopener">
+                  <i data-lucide="external-link"></i>
+                  Project Demo
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="IoT">
+            <div class="project-image-wrapper">
+              <img src="assets/Smart Incubation.png" alt="Smart Incubation System for Newborn Pups" class="project-img">
+              <div class="project-overlay">
+                <button class="project-btn open-modal-btn" data-modal="modal-4">
+                  View Details <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tags">
+                ESP8266 • IoT • Firebase • Blynk • Healthcare • Embedded Systems
+              </span>
+              <h4 class="project-card-title">
+                Smart Incubation System for Newborn Pups
+              </h4>
+              <p class="project-desc-short">
+                An IoT-enabled smart incubation system designed to provide a safe and controlled
+                environment for newborn puppies by continuously monitoring temperature,
+                humidity, air quality, and vital health parameters. The system provides
+                real-time alerts, cloud monitoring, and remote access to improve survival
+                rates and reduce manual intervention.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/nithishkumar1246/YOUR_REPOSITORY" class="project-link" target="_blank"
+                  rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="project-link-icon">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5
+                    0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35
+                    0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85
+                    1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                  GitHub Code
+                </a>
+                <a href="https://youtu.be/YOUR_VIDEO_LINK" class="project-link" target="_blank"
+                  rel="noopener noreferrer">
+                  <i data-lucide="external-link"></i>
+                  Project Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="AI">
+            <div class="project-image-wrapper">
+              <img src="assets/Spam & Ham Classification.png" alt="Spam & Ham Message Classification"
+                class="project-img">
+              <div class="project-overlay">
+                <button class="project-btn open-modal-btn" data-modal="modal-4-spam">
+                  View Details <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tags">
+                Python • NLP • Machine Learning • Scikit-Learn
+              </span>
+              <h4 class="project-card-title">
+                Spam & Ham Message Classification
+              </h4>
+              <p class="project-desc-short">
+                A machine learning model that automatically classifies SMS and email messages as Spam or Ham using
+                Natural Language Processing techniques and text classification algorithms.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/nithishkumar1246/Spam-Detection" class="project-link" target="_blank"
+                  rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="project-link-icon">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                  GitHub Code
+                </a>
+                <a href="https://spam-detection-w4w83het4iz773jcyvlw9z.streamlit.app/" class="project-link"
+                  target="_blank" rel="noopener noreferrer">
+                  <i data-lucide="external-link"></i>
+                  Project Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card" data-category="AI">
+            <div class="project-image-wrapper">
+              <img src="assets/Placement Readiness Calculator.png" alt="Placement Readiness Calculator"
+                class="project-img">
+              <div class="project-overlay">
+                <button class="project-btn open-modal-btn" data-modal="modal-5">
+                  View Details <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tags">
+                Python • Machine Learning • Data Analytics • Career Assessment • AI
+              </span>
+              <h4 class="project-card-title">
+                Placement Readiness Calculator
+              </h4>
+              <p class="project-desc-short">
+                An AI-powered career assessment tool that evaluates a student's placement readiness based on
+                aptitude, programming, communication, projects, DSA, and interview skills. It provides a readiness
+                score,
+                identifies skill gaps, and offers personalized improvement recommendations.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/nithishkumar1246/Placement_Readiness_Calculator" class="project-link"
+                  target="_blank" rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="project-link-icon">
+                    <path
+                      d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                  GitHub Code
+                </a>
+                <a href="https://placement-readiness-calculator-suak-eacuvrkmq.vercel.app/" class="project-link"
+                  target="_blank" rel="noopener noreferrer">
+                  <i data-lucide="external-link"></i>
+                  Project Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card" data-category="AI">
+            <div class="project-image-wrapper">
+              <img src="assets/Flames_Calculator.png" alt="SoulScript AI" class="project-img">
+              <div class="project-overlay">
+                <button class="project-btn open-modal-btn" data-modal="modal-6">
+                  View Details <i data-lucide="eye"></i>
+                </button>
+              </div>
+            </div>
+            <div class="project-info">
+              <span class="project-tags">
+                React • TypeScript • AI • Tailwind CSS • Gemini AI • JavaScript
+              </span>
+              <h4 class="project-card-title">
+                SoulScript AI - AI Relationship Analyzer
+              </h4>
+              <p class="project-desc-short">
+                SoulScript AI is an intelligent relationship analysis web application inspired by the classic
+                FLAMES algorithm. It combines traditional compatibility logic with AI-powered insights,
+                personalized relationship stories, beautiful animations, downloadable reports, and an
+                immersive user experience.
+              </p>
+              <div class="project-links">
+                <a href="https://github.com/nithishkumar1246/Flames_Calculator" class="project-link" target="_blank"
+                  rel="noopener noreferrer">
+                  <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none"
+                    stroke-linecap="round" stroke-linejoin="round" class="project-link-icon">
+                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5
+                    0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35
+                    0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85
+                    1.65-.17.6-.22 1.23-.15 1.85v4">
+                    </path>
+                    <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                  </svg>
+                  GitHub Code
+                </a>
+                <a href="https://flames-calculator-inky.vercel.app/" class="project-link" target="_blank"
+                  rel="noopener noreferrer">
+                  <i data-lucide="external-link"></i>
+                  Live Demo
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <!-- Modal India in 2047 -->
+    <div class="modal" id="modal-india-2047">
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <img src="assets/india_2047_thumbnail.png" alt="India in 2047: Smart Nation Vision" class="modal-hero-img">
+          <h3 class="modal-title">India in 2047: Smart Nation Vision</h3>
+          <p class="modal-tags">AI • IoT • Smart Cities • Sustainable Technology • Conceptual Design</p>
+          <div class="modal-desc">
+            <h4>Overview</h4>
+            <p>
+              "India in 2047" is a comprehensive conceptual showcase video projecting the technological and
+              infrastructure advancements of India during its centenary year of independence. The project visualizes how
+              modern technologies like Artificial Intelligence, the Internet of Things, high-speed automated transport,
+              and clean renewable energy systems will converge to create highly efficient, sustainable, and
+              hyper-connected smart urban ecosystems.
+            </p>
+            <h4>Key Features Visualized</h4>
+            <ul>
+              <li><strong>Futuristic Smart Cities:</strong> High-density urban architecture integrated with vertical
+                forests, self-sustaining green grids, and local solar harvest modules.</li>
+              <li><strong>Advanced AI Civic Integration:</strong> Cognitive agents managing traffic flow, municipal
+                logistics, and dynamic public space optimization in real time.</li>
+              <li><strong>Hyper-Connected IoT Infrastructure:</strong> Interlocking sensor nets tracking air quality,
+                energy consumption, and structural health across networks.</li>
+              <li><strong>Green Transportation Systems:</strong> Automated drone shipping lanes, hyperloop networks, and
+                clean electric vehicle transit integration.</li>
+            </ul>
+            <h4>Conceptual Technologies & Tools</h4>
+            <ul>
+              <li>Visual Concept Mapping & AI-Assisted Art Generation</li>
+              <li>Video Editing & Dynamic Compositing</li>
+              <li>IoT Systems Modeling & Smart Infrastructure Framework Design</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <a href="https://youtu.be/FsZcJc7HTx8?si=C1k6lIMStSg9zuyN" class="btn btn-primary" target="_blank"
+              rel="noopener noreferrer">
+              <i data-lucide="external-link"></i> Watch Video
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div class="modal" id="modal-1">
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <img src="assets/project1.png" alt="NeuroScan MRI Analyzer" class="modal-hero-img">
+          <h3 class="modal-title">NeuroScan MRI Analyzer</h3>
+          <p class="modal-tags">PyTorch • U-Net • ResNet34 • OpenCV • Albumentations</p>
+          <div class="modal-desc">
+            <h4>Overview</h4>
+            <p>NeuroScan is a computer vision segmentation tool built to outline brain abnormalities in clinical MRI
+              scans. Utilizing a custom U-Net architecture with a ResNet34 encoder, it achieves a Dice Coefficient of
+              0.88 on validation datasets.</p>
+            <h4>Key Features</h4>
+            <ul>
+              <li>Pixel-level semantic segmentation of tumors and lesions.</li>
+              <li>Optimized image preprocessing pipeline using CLAHE and OpenCV.</li>
+              <li>Model explainability using Grad-CAM class activation maps.</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" disabled><i data-lucide="external-link"></i> View Models (Coming
+              Soon)</button>
+            <button class="btn btn-secondary" disabled><svg viewBox="0 0 24 24" width="18" height="18"
+                stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"
+                class="btn-icon">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                </path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg> View GitHub (Coming Soon)</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div class="modal" id="modal-2">
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <img src="assets/Smart Lock System.png" alt="Smart Lock Security System" class="modal-hero-img">
+          <h3 class="modal-title">
+            Smart Lock Security System
+          </h3>
+          <p class="modal-tags">
+            Arduino • PIR Sensor • Password Authentication • IoT
+          </p>
+          <div class="modal-desc">
+            <h4>Overview</h4>
+            <p>
+              The Smart Lock Security System is an IoT-based access control solution
+              designed to enhance security for homes and restricted areas. The system
+              uses a PIR motion sensor to detect human presence and a password-based
+              authentication mechanism to grant access only to authorized users.
+              Incorrect password attempts trigger warning messages and require
+              re-authentication, improving overall security.
+            </p>
+            <h4>Key Features</h4>
+            <ul>
+              <li>Motion Detection using PIR Sensor.</li>
+              <li>Secure Password-Based Authentication.</li>
+              <li>Wrong Password Alert and Retry System.</li>
+              <li>Real-Time Access Monitoring.</li>
+              <li>Enhanced Security for Homes and Offices.</li>
+              <li>Low-Cost and Easy-to-Deploy IoT Solution.</li>
+            </ul>
+            <h4>Technologies Used</h4>
+            <ul>
+              <li>Arduino UNO</li>
+              <li>PIR Motion Sensor</li>
+              <li>4x4 Keypad Module</li>
+              <li>16x2 LCD Display</li>
+              <li>Buzzer Module</li>
+              <li>Embedded C Programming</li>
+            </ul>
+          </div>
+
+          <div class="modal-footer">
+            <!-- Tinkercad Demo -->
+            <a href="https://www.tinkercad.com/things/2UFJV0J6qVT-smart-lock-system?sharecode=Oi8uzLzbPmiQeEI4npcevkM6cAcyBjZW0HEyDL7Rz2c"
+              class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="external-link"></i>
+              View Tinkercad Demo
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/nithishkumar1246/CodeAlpha_Smart_Lock_System" class="btn btn-secondary"
+              target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                </path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+              View GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 - Smart Incubation System for Newborn Pups -->
+    <div class="modal" id="modal-4">
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <!-- Project Image -->
+          <img src="assets/Smart Incubation.png" alt="Smart Incubation System for Newborn Pups" class="modal-hero-img">
+          <!-- Title -->
+          <h3 class="modal-title">
+            Smart Incubation System for Newborn Pups
+          </h3>
+          <!-- Tags -->
+          <p class="modal-tags">
+            ESP8266 • IoT • Firebase • Blynk • Healthcare • Embedded Systems
+          </p>
+          <!-- Description -->
+          <div class="modal-desc">
+            <h4>Overview</h4>
+            <p>
+              The Smart Incubation System for Newborn Pups is an IoT-based healthcare
+              solution designed to provide a safe and controlled environment for newborn
+              puppies. The system continuously monitors temperature, humidity, air quality,
+              and vital health parameters using multiple sensors. Real-time sensor data is
+              transmitted to the cloud, enabling remote monitoring, instant alerts, and
+              data visualization through a mobile application. This intelligent system helps
+              improve the survival rate of newborn pups while minimizing manual intervention.
+            </p>
+            <h4>Key Features</h4>
+            <ul>
+              <li>Real-Time Temperature Monitoring</li>
+              <li>Humidity Monitoring & Control</li>
+              <li>Air Quality (CO₂) Detection</li>
+              <li>Pulse & Health Monitoring</li>
+              <li>Cloud-Based Data Logging</li>
+              <li>Remote Monitoring via Mobile App</li>
+              <li>Instant Notification & Alert System</li>
+              <li>Low-Cost Smart Healthcare Solution</li>
+              <li>Energy-Efficient IoT Architecture</li>
+            </ul>
+            <h4>Technologies Used</h4>
+            <ul>
+              <li>ESP8266 NodeMCU</li>
+              <li>DHT11 / DHT22 Sensor</li>
+              <li>MQ-135 Air Quality Sensor</li>
+              <li>Pulse Sensor</li>
+              <li>Firebase Realtime Database</li>
+              <li>Blynk IoT Platform</li>
+              <li>Arduino IDE</li>
+              <li>Embedded C / C++</li>
+            </ul>
+            <h4>Applications</h4>
+            <ul>
+              <li>Veterinary Healthcare</li>
+              <li>Animal Incubation Systems</li>
+              <li>Smart Livestock Monitoring</li>
+              <li>IoT-Based Healthcare Solutions</li>
+              <li>Remote Environmental Monitoring</li>
+              <li>Research & Animal Welfare</li>
+            </ul>
+          </div>
+          <!-- Buttons -->
+          <div class="modal-footer">
+            <!-- Demo -->
+            <a href="https://your-demo-link.com" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="external-link"></i>
+              View Demo
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/nithishkumar1246/YOUR_REPOSITORY" class="btn btn-secondary" target="_blank"
+              rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5
+              0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35
+              0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85
+              1.65-.17.6-.22 1.23-.15 1.85v4">
+                </path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+              View GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 4 - Spam & Ham Classification -->
+    <div class="modal" id="modal-4-spam">
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <img src="assets/Spam & Ham Classification.png" alt="Spam & Ham Message Classification"
+            class="modal-hero-img">
+          <h3 class="modal-title">
+            Spam & Ham Message Classification
+          </h3>
+          <p class="modal-tags">
+            Python • NLP • Machine Learning • Scikit-Learn
+          </p>
+          <div class="modal-desc">
+            <h4>Overview</h4>
+            <p>
+              The Spam & Ham Classification System is a Natural Language Processing (NLP)
+              project designed to automatically classify incoming messages as either
+              Spam (unwanted messages) or Ham (legitimate messages). The system
+              preprocesses text data, extracts meaningful features, and applies
+              machine learning algorithms to perform accurate message classification.
+            </p>
+            <h4>Key Features</h4>
+            <ul>
+              <li>Automatic Spam Detection.</li>
+              <li>Natural Language Processing (NLP).</li>
+              <li>Text Cleaning and Preprocessing.</li>
+              <li>Feature Extraction using TF-IDF.</li>
+              <li>Machine Learning-Based Classification.</li>
+              <li>Performance Evaluation and Accuracy Analysis.</li>
+            </ul>
+            <h4>Technologies Used</h4>
+            <ul>
+              <li>Python</li>
+              <li>Pandas</li>
+              <li>NumPy</li>
+              <li>Scikit-Learn</li>
+              <li>NLTK</li>
+              <li>TF-IDF Vectorizer</li>
+              <li>Jupyter Notebook</li>
+            </ul>
+            <h4>Applications</h4>
+            <ul>
+              <li>Email Spam Filtering</li>
+              <li>SMS Spam Detection</li>
+              <li>Customer Support Message Screening</li>
+              <li>Cybersecurity and Communication Monitoring</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <!-- Demo Link -->
+            <a href="https://spam-detection-w4w83het4iz773jcyvlw9z.streamlit.app/" class="btn btn-primary"
+              target="_blank" rel="noopener noreferrer">
+              <i data-lucide="external-link"></i>
+              View Demo
+            </a>
+            <!-- GitHub Link -->
+            <a href="https://github.com/nithishkumar1246/Spam-Detection" class="btn btn-secondary" target="_blank"
+              rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                </path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+              View GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div class="modal" id="modal-5">
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <img src="assets/Placement Readiness Calculator.png" alt="Placement Readiness Calculator"
+            class="modal-hero-img">
+          <h3 class="modal-title">
+            Placement Readiness Calculator
+          </h3>
+          <p class="modal-tags">
+            Python • Data Analytics • Career Assessment • Machine Learning • AI
+          </p>
+          <div class="modal-desc">
+            <h4>Overview</h4>
+            <p>
+              Placement Readiness Calculator is an intelligent career assessment platform
+              that helps students evaluate their preparedness for campus placements.
+              The system analyzes aptitude, programming skills, communication ability,
+              DSA knowledge, SQL proficiency, projects, and interview performance to
+              generate an overall readiness score along with personalized recommendations
+              for improvement.
+            </p>
+            <h4>Key Features</h4>
+            <ul>
+              <li>Placement Readiness Score Calculation</li>
+              <li>Aptitude & Technical Skill Assessment</li>
+              <li>Programming Skill Evaluation</li>
+              <li>Communication Skill Analysis</li>
+              <li>Resume Strength Assessment</li>
+              <li>Interview Readiness Tracking</li>
+              <li>Skill Gap Detection</li>
+              <li>Personalized Career Recommendations</li>
+              <li>Progress Monitoring Dashboard</li>
+            </ul>
+            <h4>Technologies Used</h4>
+            <ul>
+              <li>Python</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript</li>
+              <li>Flask</li>
+              <li>SQLite / MySQL</li>
+              <li>Pandas</li>
+              <li>Chart.js</li>
+            </ul>
+            <h4>Applications</h4>
+            <ul>
+              <li>Campus Placement Preparation</li>
+              <li>Career Readiness Assessment</li>
+              <li>Training & Placement Cell Support</li>
+              <li>Student Performance Evaluation</li>
+              <li>Skill Gap Analysis</li>
+              <li>Personalized Learning Roadmap Generation</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <!-- Demo Link -->
+            <a href="https://placement-readiness-calculator-suak-eacuvrkmq.vercel.app/" class="btn btn-primary"
+              target="_blank" rel="noopener noreferrer">
+              <i data-lucide="external-link"></i>
+              View Demo
+            </a>
+            <!-- GitHub Link -->
+            <a href="https://github.com/nithishkumar1246/Placement_Readiness_Calculator" class="btn btn-secondary"
+              target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                <path
+                  d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                </path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+              View GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div class="modal" id="modal-6">
+      <div class="modal-content">
+        <button class="close-modal-btn" aria-label="Close modal">&times;</button>
+        <div class="modal-body">
+          <img src="assets/Flames_Calculator.png" alt="Flames_Calculator" class="modal-hero-img">
+          <h3 class="modal-title">
+            SoulScript AI – AI-Powered Relationship Analyzer
+          </h3>
+          <p class="modal-tags">
+            React • TypeScript • Tailwind CSS • Gemini AI • JavaScript • AI • Web Application
+          </p>
+          <div class="modal-desc">
+            <h4>Overview</h4>
+            <p>
+              SoulScript AI is a modern AI-powered relationship analysis web application inspired
+              by the classic FLAMES algorithm. Instead of displaying only a relationship result,
+              the platform combines traditional compatibility logic with AI-generated insights,
+              personalized stories, emotional analysis, and interactive visualizations to create
+              an engaging and entertaining user experience. The application features a premium
+              glassmorphism interface, smooth animations, responsive design, and intelligent
+              AI-generated content.
+            </p>
+            <h4>Key Features</h4>
+            <ul>
+              <li>AI-Powered Relationship Analysis</li>
+              <li>Traditional FLAMES Algorithm Integration</li>
+              <li>Personalized Compatibility Report</li>
+              <li>AI-Generated Relationship Story</li>
+              <li>Interactive Animated Result Screen</li>
+              <li>Relationship Compatibility Score</li>
+              <li>Downloadable Result Report</li>
+              <li>Dark & Light Mode Support</li>
+              <li>Fully Responsive UI</li>
+            </ul>
+            <h4>Technologies Used</h4>
+            <ul>
+              <li>React</li>
+              <li>TypeScript</li>
+              <li>Tailwind CSS</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Gemini AI API</li>
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>Framer Motion (Animations)</li>
+            </ul>
+            <h4>Applications</h4>
+            <ul>
+              <li>AI-Powered Entertainment Platform</li>
+              <li>Interactive Relationship Analysis</li>
+              <li>Frontend UI/UX Showcase Project</li>
+              <li>AI API Integration Demonstration</li>
+              <li>Modern Web Application Development</li>
+              <li>Portfolio & Technical Skill Showcase</li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <!-- Demo Link -->
+            <a href="https://flames-calculator-inky.vercel.app/" class="btn btn-primary" target="_blank"
+              rel="noopener noreferrer">
+              <i data-lucide="external-link"></i>
+              View Demo
+            </a>
+            <!-- GitHub Link -->
+            <a href="https://github.com/nithishkumar1246/Flames_Calculator" class="btn btn-secondary" target="_blank"
+              rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5
+              0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35
+              0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85
+              1.65-.17.6-.22 1.23-.15 1.85v4">
+                </path>
+                <path d="M9 18c-4.51 2-5-2-7-2"></path>
+              </svg>
+              View GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CV Modal -->
+    <div class="modal" id="cv-modal">
+      <div class="modal-content cv-modal-content">
+        <button class="close-modal-btn" id="close-cv-btn" aria-label="Close CV">&times;</button>
+        <div class="modal-body cv-print-area">
+          <!-- Resume Actions (Visible only on screen, hidden on print) -->
+          <div class="cv-actions no-print">
+            <button class="btn btn-primary" id="print-cv-btn">
+              <i data-lucide="printer"></i> Print / Save PDF
+            </button>
+            <a href="assets/Nithish_Kumar_M_CSE(AI & ML).pdf" class="btn btn-secondary" id="download-cv-pdf" download>
+              <i data-lucide="download"></i> Download PDF
+            </a>
+          </div>
+
+          <div class="resume-wrapper">
+            <!-- Resume Header -->
+            <header class="resume-header">
+              <div class="resume-header-info">
+                <h2 class="resume-name">Nithish Kumar</h2>
+                <p class="resume-title">AI & Machine Learning Student | IoT Specialist</p>
+              </div>
+              <div class="resume-contact">
+                <p><i data-lucide="mail"></i> nithishkumar6341@gmail.com</p>
+                <p><i data-lucide="phone"></i> +91 6383622617</p>
+                <p><i data-lucide="map-pin"></i> Madurai, Tamil Nadu</p>
+                <p><i data-lucide="github"></i> github.com/nithishkumar1246</p>
+                <p><i data-lucide="linkedin"></i> linkedin.com/in/nkcoder</p>
+              </div>
+            </header>
+
+            <hr class="resume-divider">
+
+            <!-- Resume Layout Grid -->
+            <div class="resume-grid">
+              <div class="resume-col-left">
+                <!-- Education -->
+                <section class="resume-section">
+                  <h3 class="resume-section-title"><i data-lucide="graduation-cap"></i> Education</h3>
+                  <div class="resume-item">
+                    <div class="resume-item-header">
+                      <h4>B.E. Computer Science Engineering (AI & ML)</h4>
+                      <span class="resume-date">2023 - 2027</span>
+                    </div>
+                    <p class="resume-org">Sethu Institute of Technology</p>
+                    <p class="resume-details">Current Aggregate Score: 82%</p>
+                  </div>
+                  <div class="resume-item">
+                    <div class="resume-item-header">
+                      <h4>Higher Secondary Second Year (+12)</h4>
+                      <span class="resume-date">2022 - 2023</span>
+                    </div>
+                    <p class="resume-org">Katie Wilcox Matriculation School, Madurai</p>
+                    <p class="resume-details">Score: 85% (Advanced Mathematics, Physics, CS)</p>
+                  </div>
+                </section>
+
+                <!-- Projects -->
+                <section class="resume-section">
+                  <h3 class="resume-section-title"><i data-lucide="folder-git-2"></i> Key Projects</h3>
+                  <div class="resume-item">
+                    <div class="resume-item-header">
+                      <h4>NeuroScan MRI Analyzer</h4>
+                    </div>
+                    <p class="resume-details">Built semantic segmentation tool using U-Net and ResNet34 in PyTorch to
+                      detect brain abnormalities with a Dice Coefficient of 0.88 on validation datasets.</p>
+                  </div>
+                  <div class="resume-item">
+                    <div class="resume-item-header">
+                      <h4>Smart Lock Security System</h4>
+                    </div>
+                    <p class="resume-details">Developed an IoT-based security door lock with PIR motion detection, 4x4
+                      keypad authentication, and buzzer warning system via Arduino.</p>
+                  </div>
+                  <div class="resume-item">
+                    <div class="resume-item-header">
+                      <h4>Smart Street Light System</h4>
+                    </div>
+                    <p class="resume-details">Implemented automatic light controller using Arduino, LDR sensor, and
+                      ultrasonic sensor for smart city power saving.</p>
+                  </div>
+                </section>
+              </div>
+
+              <div class="resume-col-right">
+                <!-- Technical Skills -->
+                <section class="resume-section">
+                  <h3 class="resume-section-title"><i data-lucide="cpu"></i> Tech Stack</h3>
+                  <div class="resume-skills-group">
+                    <h4>Machine Learning & AI</h4>
+                    <p>Python, ML Foundations, Neural Networks, PyTorch, Generative AI & Chatbots</p>
+                  </div>
+                  <div class="resume-skills-group">
+                    <h4>IoT & Hardware</h4>
+                    <p>Arduino UNO, ESP32, Sensor Integration, Automation & Robotics</p>
+                  </div>
+                  <div class="resume-skills-group">
+                    <h4>Languages & Tools</h4>
+                    <p>Java, SQL, Git & GitHub, VS Code, Figma, Jupyter Notebooks</p>
+                  </div>
+                </section>
+
+                <!-- Focus Areas -->
+                <section class="resume-section">
+                  <h3 class="resume-section-title"><i data-lucide="target"></i> Focus Areas</h3>
+                  <ul class="resume-bullets">
+                    <li>Artificial Intelligence & Machine Learning</li>
+                    <li>Internet of Things (IoT) & Smart Agriculture</li>
+                    <li>Robotics & Home Automation Systems</li>
+                    <li>Generative AI & LLM APIs</li>
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Hire Me Modal -->
+    <div class="modal" id="hire-modal">
+      <div class="modal-content hire-modal-content">
+        <button class="close-modal-btn" id="close-hire-btn" aria-label="Close Hire Form">&times;</button>
+        <div class="modal-body">
+          <h3 class="modal-title">Hire Proposal / Offer Letter</h3>
+          <p class="modal-tags">Send a job offer directly to Nithish Kumar via email</p>
+
+          <form id="hire-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hire-company">Company / Organization</label>
+                <div class="input-wrapper">
+                  <i data-lucide="building" class="input-icon"></i>
+                  <input type="text" id="hire-company" name="company" placeholder="e.g. Google DeepMind" required>
+                </div>
+                <span class="error-msg" id="hire-company-error">Please enter the company name</span>
+              </div>
+
+              <div class="form-group">
+                <label for="hire-position">Job Position / Role</label>
+                <div class="input-wrapper">
+                  <i data-lucide="briefcase" class="input-icon"></i>
+                  <input type="text" id="hire-position" name="position" placeholder="e.g. AI Research Intern" required>
+                </div>
+                <span class="error-msg" id="hire-position-error">Please enter the job role</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="hire-salary">Compensation / Budget</label>
+                <div class="input-wrapper">
+                  <i data-lucide="dollar-sign" class="input-icon"></i>
+                  <input type="text" id="hire-salary" name="salary" placeholder="e.g. $5,000 / month or Competitive">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="hire-location">Location / Remote Type</label>
+                <div class="input-wrapper">
+                  <i data-lucide="map-pin" class="input-icon"></i>
+                  <input type="text" id="hire-location" name="location" placeholder="e.g. Remote, On-site (Madurai)">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="hire-message">Offer Details / Message</label>
+              <div class="input-wrapper">
+                <textarea id="hire-message" name="message" rows="4"
+                  placeholder="Briefly describe the team, project, or role details..." required></textarea>
+              </div>
+              <span class="error-msg" id="hire-message-error">Please enter the message details</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="hire-submit-btn">
+              Generate Offer Email <i data-lucide="send"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Education Journey Section -->
+    <section id="experience" class="experience-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Academic Profile</span>
+          <h3 class="section-title">Education Journey</h3>
+        </div>
+
+        <div class="timeline">
+          <!-- Item 1 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2023 - 2027</div>
+            <div class="timeline-content">
+              <h4 class="timeline-role">B.E. Computer Science Engineering (AI & ML)</h4>
+              <span class="timeline-company">Sethu Institute of Technology</span>
+              <p class="timeline-desc">Currently pursuing, maintaining an aggregate score of <strong>82%</strong>.
+                Deepening knowledge in neural networks, computer vision, data pipelines, and natural
+                language processing architectures.</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2022 - 2023</div>
+            <div class="timeline-content">
+              <h4 class="timeline-role">Higher Secondary Second Year (+12)</h4>
+              <span class="timeline-company">Katie Wilcox Matriculation Higher Secondary School, Madurai</span>
+              <p class="timeline-desc">Completed Higher Secondary board education with a final score of
+                <strong>85%</strong>. Developed solid foundational quantitative skills in Advanced Mathematics, Physics,
+                and Computer Science.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2020 - 2021</div>
+            <div class="timeline-content">
+              <h4 class="timeline-role">Secondary School Education (SSLC)</h4>
+              <span class="timeline-company">Katie Wilcox Matriculation Higher Secondary School, Madurai</span>
+              <p class="timeline-desc">Successfully cleared secondary school education board exams with a
+                <strong>Pass</strong> grade, building core quantitative, science, and logical reasoning bases.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Certifications & Workshops Section -->
+    <section id="certifications" class="certifications-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Credentials</span>
+          <h3 class="section-title">Certifications & Workshops</h3>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="certifications-filter">
+          <button class="cert-filter-btn active" data-filter="all">All Credentials</button>
+          <button class="cert-filter-btn" data-filter="cert">Certifications</button>
+          <button class="cert-filter-btn" data-filter="workshop">Workshops</button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="certifications-grid">
+          <!-- Card 1 -->
+          <div class="cert-card animate-on-scroll" data-category="cert">
+            <div class="cert-icon-wrapper cyan-glow">
+              <i data-lucide="monitor-smartphone" class="cert-icon cyan"></i>
+            </div>
+            <span class="cert-badge cert-badge-cert">Certification</span>
+            <h4 class="cert-title">Human Computer Interaction</h4>
+            <p class="cert-provider">
+              NPTEL (IIT Madras) • SWAYAM
+            </p>
+            <p class="cert-date">
+              <i data-lucide="calendar"></i> Apr 2026
+            </p>
+            <p class="cert-desc">
+              Successfully completed the 12-week Human Computer Interaction course with an Elite certification,
+              gaining expertise in user-centered design, usability principles, interaction design, accessibility,
+              and user experience evaluation.
+            </p>
+            <div class="cert-skills">
+              <span>Human Computer Interaction</span>
+              <span>User Experience (UX)</span>
+              <span>Interaction Design</span>
+            </div>
+            <a href="assets/NPTEL HCI.pdf" class="btn btn-secondary cert-verify-btn" target="_blank" rel="noopener">
+              Verify <i data-lucide="external-link"></i>
+            </a>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="cert-card animate-on-scroll" data-category="cert">
+            <div class="cert-icon-wrapper cyan-glow">
+              <i data-lucide="code-2" class="cert-icon cyan"></i>
+            </div>
+            <span class="cert-badge cert-badge-cert">Certification</span>
+            <h4 class="cert-title">Java with Beginner DSA</h4>
+            <p class="cert-provider">CodeChef</p>
+            <p class="cert-date">
+              <i data-lucide="calendar"></i> Jun 2026
+            </p>
+            <p class="cert-desc">
+              Successfully completed Java programming and Beginner Data Structures & Algorithms, covering
+              problem-solving,
+              object-oriented programming, arrays, strings, searching, sorting, and foundational DSA concepts.
+            </p>
+            <div class="cert-skills">
+              <span>Java</span>
+              <span>Data Structures</span>
+              <span>Algorithms</span>
+            </div>
+            <a href="assets/java.pdf" class="btn btn-secondary cert-verify-btn" target="_blank" rel="noopener">
+              Verify <i data-lucide="external-link"></i>
+            </a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="cert-card animate-on-scroll" data-category="workshop">
+            <div class="cert-icon-wrapper cyan-glow">
+              <i data-lucide="sparkles" class="cert-icon cyan"></i>
+            </div>
+            <span class="cert-badge cert-badge-cert">Workshop</span>
+            <h4 class="cert-title">Create Your Own AI Workshop & AI Achiever Award</h4>
+            <p class="cert-provider">
+              CodeVibez Learning Hub
+            </p>
+            <p class="cert-date">
+              <i data-lucide="calendar"></i> Apr 2025
+            </p>
+            <p class="cert-desc">
+              Successfully completed the one-day <strong>Create Your Own AI</strong> workshop and
+              received the <strong>AI Achiever</strong> award in recognition of outstanding
+              participation, project implementation, and excellence in applying Artificial
+              Intelligence concepts.
+            </p>
+            <div class="cert-skills">
+              <span>Artificial Intelligence</span>
+              <span>Prompt Engineering</span>
+              <span>AI Applications</span>
+            </div>
+            <a href="assets/10.png" class="btn btn-secondary cert-verify-btn" target="_blank" rel="noopener">
+              Verify <i data-lucide="external-link"></i>
+            </a>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="cert-card animate-on-scroll" data-category="cert">
+            <div class="cert-icon-wrapper violet-glow">
+              <i data-lucide="bot" class="cert-icon violet"></i>
+            </div>
+            <span class="cert-badge cert-badge-workshop">Certification</span>
+            <h4 class="cert-title">Project-Based Robotics Training</h4>
+            <p class="cert-provider">
+              Zetspire Technologies Pvt. Ltd. • e-Yantra (IIT Bombay)
+            </p>
+            <p class="cert-date">
+              <i data-lucide="calendar"></i> Dec 2024
+            </p>
+            <p class="cert-desc">
+              Successfully completed a 5-day project-based robotics internship focused on Raspberry Pi, Arduino UNO,
+              robotics programming, embedded systems, automation, and real-world IoT applications under
+              the e-Yantra Lab Setup Initiative (eLSI) at Sethu Institute of Technology.
+            </p>
+            <div class="cert-skills">
+              <span>Raspberry Pi</span>
+              <span>Arduino UNO</span>
+              <span>IoT</span>
+            </div>
+            <a href="assets/IOT.jpeg" class="btn btn-secondary cert-verify-btn" target="_blank" rel="noopener">
+              Verify <i data-lucide="external-link"></i>
+            </a>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="cert-card animate-on-scroll" data-category="workshop">
+            <div class="cert-icon-wrapper violet-glow">
+              <i data-lucide="bot" class="cert-icon violet"></i>
+            </div>
+            <span class="cert-badge cert-badge-workshop">Workshop</span>
+            <h4 class="cert-title">Agentic AI Acceleration</h4>
+            <p class="cert-provider">Wrench Wise x Sethu Institute of Technology</p>
+            <p class="cert-date">
+              <i data-lucide="calendar"></i> Jan 2026
+            </p>
+            <p class="cert-desc">
+              Successfully completed a 2-day workshop on Agentic AI Acceleration, exploring
+              emerging technologies from AI chatbots to multi-agent AI systems. Gained hands-on
+              exposure to AI agents, autonomous workflows, and modern AI application development.
+            </p>
+            <div class="cert-skills">
+              <span>Agentic AI</span>
+              <span>AI Chatbots</span>
+              <span>Multi-Agent Systems</span>
+            </div>
+            <a href="assets/Certificate_Nithish_Kumar_M.png" class="btn btn-secondary cert-verify-btn" target="_blank"
+              rel="noopener">
+              View <i data-lucide="external-link"></i>
+            </a>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="cert-card animate-on-scroll" data-category="workshop">
+            <div class="cert-icon-wrapper violet-glow">
+              <i data-lucide="award" class="cert-icon violet"></i>
+            </div>
+            <span class="cert-badge cert-badge-workshop">Workshop</span>
+            <h4 class="cert-title">Best Innovation Award</h4>
+            <p class="cert-provider">RuralTech 2K25 • Sethu Institute of Technology</p>
+            <p class="cert-date">
+              <i data-lucide="calendar"></i>Dec 2025
+            </p>
+            <p class="cert-desc">
+              🏆 Received the <strong>Best Innovation Award</strong> at RuralTech 2K25 for presenting an innovative
+              solution at a national-level seminar and innovation challenge. Recognized for creativity, technical
+              excellence, and real-world impact.
+            </p>
+            <div class="cert-skills">
+              <span>Innovation</span>
+              <span>Problem Solving</span>
+              <span>Research</span>
+            </div>
+            <a href="assets/Rural Tech.jpg" class="btn btn-secondary cert-verify-btn" target="_blank" rel="noopener">
+              View <i data-lucide="external-link"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-subtitle">Get In Touch</span>
+          <h3 class="section-title">Let's Connect</h3>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Info Column -->
+          <div class="contact-info">
+            <h4>Let's create something amazing together.</h4>
+            <p>Have an idea or a project you need help with? Shoot me a message and let's explore how we can
+              collaborate.</p>
+
+            <div class="info-list">
+              <div class="info-item">
+                <i data-lucide="mail" class="info-icon"></i>
+                <div>
+                  <h5>Email Me</h5>
+                  <a href="https://mail.google.com/mail/?view=cm&to=nithishkumar6341@gmail.com" target="_blank"
+                    rel="noopener">nithishkumar6341@gmail.com</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <i data-lucide="map-pin" class="info-icon"></i>
+                <div>
+                  <h5>Location</h5>
+                  <a href="https://maps.app.goo.gl/B9A7qx7EwAytqcJQ6" target="_blank" rel="noopener">Madurai, Tamil Nadu
+                    (Open to Remote)</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="social-links">
+              <a href="https://github.com/nithishkumar1246" class="social-link" aria-label="GitHub" target="_blank"
+                rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                  fill="none" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                  <path
+                    d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4">
+                  </path>
+                  <path d="M9 18c-4.51 2-5-2-7-2"></path>
+                </svg></a>
+              <a href="https://www.linkedin.com/in/nkcoder" class="social-link" aria-label="LinkedIn" target="_blank"
+                rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                  fill="none" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg></a>
+              <a href="https://wa.me/916383622617" class="social-link" aria-label="WhatsApp" target="_blank"
+                rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+                  fill="none" stroke-linecap="round" stroke-linejoin="round" class="social-icon">
+                  <path
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                  </path>
+                </svg></a>
+            </div>
+          </div>
+
+          <!-- Form Column -->
+          <div class="contact-card">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <div class="input-wrapper">
+                  <i data-lucide="user" class="input-icon"></i>
+                  <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <span class="error-msg" id="name-error">Please enter your name</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-wrapper">
+                  <i data-lucide="mail" class="input-icon"></i>
+                  <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <span class="error-msg" id="email-error">Please enter a valid email address</span>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Your Message</label>
+                <div class="input-wrapper">
+                  <textarea id="message" name="message" rows="5" placeholder="How can I help you?" required></textarea>
+                </div>
+                <span class="error-msg" id="message-error">Please write your message</span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
+                Send Message <i data-lucide="send"></i>
+              </button>
+            </form>
+
+            <!-- Success Overlay -->
+            <div class="success-overlay" id="success-overlay">
+              <div class="success-content">
+                <i data-lucide="check-circle-2" class="success-icon"></i>
+                <h4>Message Sent!</h4>
+                <p>Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                <button class="btn btn-primary" id="success-close-btn">Send Another Message</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <div class="footer-info">
+        <p>&copy; 2026 Nithish Kumar🫰. All rights reserved.</p>
+        <p class="footer-quote">"Connecting the physical world with neural networks — one sensor, one neuron, and one
+          line of code at a time."</p>
+      </div>
+      <div class="footer-bottom-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
